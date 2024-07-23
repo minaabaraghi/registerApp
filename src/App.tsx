@@ -7,8 +7,10 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import BasePage from './routes/basePage';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import {useMediaQuery} from '@mui/material';
 function App() {
-    const [mode, setMode] = useState(true);
+    const prefer = useMediaQuery('(prefers-color-scheme:dark)');
+    const [mode, setMode] = useState(prefer);
     const darkTheme = createTheme({
         palette: {
             mode: mode ? 'dark' : 'light',
