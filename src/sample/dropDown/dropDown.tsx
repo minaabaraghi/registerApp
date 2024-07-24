@@ -11,6 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import './style.css';
 export default function TemporaryDrawer() {
     const [open, setOpen] = React.useState(false);
 
@@ -18,7 +19,7 @@ export default function TemporaryDrawer() {
         setOpen(newOpen);
     };
 
-    const [label, setLabel] = React.useState('');
+    const [label, setLabel] = React.useState('select');
     return (
         <div>
             <FormControl fullWidth>
@@ -26,13 +27,13 @@ export default function TemporaryDrawer() {
                     onClick={toggleDrawer(true)}
                     startIcon={<KeyboardArrowDownIcon />}
                     fullWidth
-                    sx={{background: 'e1e1e1', width: '50px'}}
+                    sx={{background: '#fff !important'}}
                 >
                     {label}
                 </Button>
             </FormControl>
             <Drawer anchor={'bottom'} open={open} onClose={toggleDrawer(false)}>
-                <List>
+                <List className="test ">
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
