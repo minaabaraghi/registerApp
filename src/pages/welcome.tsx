@@ -1,11 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export default function Welcome() {
-  return (
-    <div >
-        <p>
-        welcome
-        </p>
-    </div>
-  );
+    return <div style={{height: '100vh'}}>welcome</div>;
 }
